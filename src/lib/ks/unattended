@@ -153,6 +153,8 @@ if [ -f /etc/nethserver-release ]; then
   echo "Fix /etc/issue..."
   cp -f /etc/nethserver-release /etc/issue
   echo -e 'Kernel \\r on an \\m\n' >> /etc/issue
+  echo -e '\nTo login to NethServer please use following URL(s):\n\n' >> /etc/issue
+  ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | sed 's/.*/https:\/\/&:980/' >> /etc/issue
 fi
 
 %end
