@@ -17,6 +17,7 @@ Requires: syslinux
 Requires: tar
 Requires: createrepo
 Requires: yum-plugin-downloadonly
+Requires: mktorrent
 
 
 %description
